@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Identifier</title>
+</head>
+<body>
+    <h1>Hash Identifier</h1>
+    <form method="post">
+        <label for="hash_input">Enter Hash:</label>
+        <input type="text" id="hash_input" name="hash_input" required>
+        <button type="submit">Identify</button>
+    </form>
+    {% if hash_input %}
+        <p>Entered Hash: {{ hash_input }}</p>
+        <p>{{pawn}}</p>
+        <p>Possible Hash Types:</p>
+        <ul>
+            {% for hash_type in hash_types %}
+                <li>{{ hash_type }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
